@@ -3,6 +3,12 @@
 # Instalar dependencias
 npm i
 
+#  Compilar proyecto de Angular
+ng build
+
+Borrar todo el contenido de la carpeta "public" en el proyecto de Node
+Pegar en la carpeta "public" todos los archivos de la compilacion obtenidos previamente
+
 # Deployar en Heroku
 Crear una cuenta en Heroku https://www.heroku.com/
 
