@@ -15,5 +15,3 @@ app.use(express.static('public'));
 app.listen(port, () => {
     console.log('Server on port', port);
 });
-
-//https://webserver-nodejpa.herokuapp.com
