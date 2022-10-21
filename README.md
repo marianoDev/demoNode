@@ -1,7 +1,9 @@
 # Template para crear el webserver y estructura de API
 
 # Instalar dependencias
+```
 npm i
+```
 
 #  Compilar proyecto de Angular
 ng build
