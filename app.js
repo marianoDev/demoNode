@@ -8,18 +8,12 @@ port = process.env.PORT;
 app.use(express.static('public'));
 
 //Rutas
-app.get('/generic', (req, res) => {
-    res.sendFile(`${__dirname}/public/generic.html`);
-})
-
-app.get('/elements', (req, res) => {
-    res.sendFile(`${__dirname}/public/elements.html`);
-})
-
-app.get('*', (req, res) => {
-    res.sendFile(`${__dirname}/public/404.html`);
-})
+// app.get('*', (req, res) => {
+//     res.sendFile(`${__dirname}/public/index.html`);
+// })
 
 app.listen(port, () => {
     console.log('Server on port', port);
 });
+
+//https://webserver-nodejpa.herokuapp.com
