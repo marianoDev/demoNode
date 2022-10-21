@@ -37,8 +37,13 @@ Make some changes to the code you just cloned and deploy them to Heroku using Gi
 
 ```
 git add .
-git commit -am "make it better"
+git commit -m "algun comentario sobre el commit"
 git push heroku master
+```
+
+*Nota: si estan trabajando sobre  la rama main, tendran que reemplazar master por main en el ultimo comando
+```
+git push heroku main
 ```
 
 https://webserver-nodejpa.herokuapp.com
