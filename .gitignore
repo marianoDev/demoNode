@@ -5,3 +5,5 @@ database/config.js
 helpers/jwt.js
 models/server.js
 routes/auth.js
+middlewares/db-validators.js
+middlewares/validate-fields.js
