@@ -1,9 +1,11 @@
 node_modules
 .env
 controllers/auth.js
+controllers/recipes.js
 database/config.js
 helpers/jwt.js
 models/server.js
 routes/auth.js
+routes/recipes.js
 middlewares/db-validators.js
 middlewares/validate-fields.js
