@@ -6,7 +6,12 @@ mongoose.set('strictQuery',false);
 const dbConection = async() => {
 
     try {
-        await mongoose.connect(process.env.MONGODB_ATLAS)
+        await mongoose.connect(process.env.MONGODB_ATLAS, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+           // useCreateIndex: true,
+           // useFindAndModify: false
+        });
 
         console.log('Dale capo nunca te rindas!!');
 
