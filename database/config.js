@@ -7,12 +7,9 @@ mongoose.set('strictQuery',false);
 const dbConection = async() => {
 
     try {
-        await mongoose.connect(mongodb+srv://clCafe:INTRO-cluster2023@clustercafe.suyazhs.mongodb.net/cafeDB, {
-            useUnifiedTopology: true,
-            useNewUrlParser: true,
-            useCreateIndex: true,
-        });
-
+        await 
+        mongoose.connect("mongodb+srv://clCafe:INTRO-cluster2023@clustercafe.suyazhs.mongodb.net/cafeDB", { useNewUrlParser: true, useCreateIndex: true });
+        
         console.log('Dale capo nunca te rindas!!');
 
     } catch (error) {
