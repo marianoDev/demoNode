@@ -1,55 +1,49 @@
 const express = require('express');
 const cors = require('cors');
-const {dbConnection} = require('../database/config');
+const routerAuth = require('../routes/users');
+const { dbConection } = require('../database/config');
+const { routerRecipe } = require('../routes/recipes');
 
 class Server {
+
     constructor() {
+
         this.app = express();
         this.port = process.env.PORT;
-
-        this.authPath = '/api/auth';
-        this.recipesPath = '/api/recipes';
-
-        //DB Connection
-        this.DBConnect();
-
-        //Middlewares
+       
+        this.authPath = '/api/auth'
+        this.recipePath = '/api/recipes'
+       
+        //Conectar a Mongo
+        this.conectarDB();
+       
+        // Middlewares
         this.middlewares();
-
-        //Routes
+       
+        //Rutas
         this.routes();
+        
     }
 
-    async DBConnect(){
-        await dbConnection();
+    async conectarDB(){
+        await dbConection()
     }
 
-    middlewares() {
-        //CORS
-        // const corsOptions = {
-        //     "origin": "*",
-        //     "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-        //     "preflightContinue": false,
-        //     "optionsSuccessStatus": 204
-        //   }
-        this.app.use(cors());
-
-        //Lectura y parseo del body
-        this.app.use(express.json());
-
-        //Directorio publico para hosting
-        this.app.use(express.static('public'));
+    middlewares(){
+        this.app.use( cors());
+        this.app.use( express.json() );
+        this.app.use( express.static('public'));
     }
 
     routes() {
-        this.app.use(this.authPath, require('../routes/auth'));
-        this.app.use(this.recipesPath, require('../routes/recipes'));
+        this.app.use(this.authPath, routerAuth);
+        this.app.use(this.recipePath, routerRecipe)
     }
 
-    listen(){
+    listen() {
         this.app.listen( this.port, () => {
-            console.log('Server on port: ', this.port );
-        });        
+            console.log('Servidor corriendo en puerto', this.port);
+        })
     }
 }
 

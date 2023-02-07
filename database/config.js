@@ -1,22 +1,23 @@
-const mongoose = require('mongoose');
+// CONFIGURACION PARA CONECTARSE A LA DB VIA MONGOOSE USANDO DOTENV
 
-const dbConnection = async() => {
+const mongoose = require('mongoose');
+mongoose.set('strictQuery',false);
+
+const dbConection = async() => {
+
     try {
-        await mongoose.connect( process.env.MONGODB_CNN, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            //useCreateIndex: true,
-            //useFindAndModify: false
-        });
-    
-        console.log('DB Online');
+        await mongoose.connect(process.env.MONGODB_ATLAS)
+
+        console.log('Dale capo nunca te rindas!!');
 
     } catch (error) {
+
         console.log(error);
-        throw new Error('Error starting database');
+        throw new Error('Explota la DB chabon, cual te mandaste');
     }
+
 }
 
 module.exports = {
-    dbConnection
+    dbConection
 }

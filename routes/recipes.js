@@ -1,11 +1,23 @@
-const {Router} = require('express');
-const {check} = require('express-validator');
-const {storeRecipes, fetchRecipes} = require('../controllers/recipes');
-const {isAuthenticate} = require('../middlewares/db-validators');
+const { Router } = require('express');
+const { check } = require('express-validator');
+const { fetch, save } = require('../controllers/recipe');
+const { validarCampos } = require('../middlewares/validar-campos');
+const { validarJWT } = require('../middlewares/validarJwt');
 
-const router = Router();
+const routerRecipe = Router();
 
-router.put('/', isAuthenticate, storeRecipes);
-router.get('/', isAuthenticate, fetchRecipes);
+// http://localhost:8081/api/recipes/save
+routerRecipe.put('/save', [
+    // validarJWT,
+    validarCampos
+], save)
 
-module.exports = router;
+// http://localhost:8081/api/recipes/fetch
+routerRecipe.get('/fetch', [
+    // validarJWT,
+    validarCampos
+], fetch)
+
+module.exports = {
+    routerRecipe
+}

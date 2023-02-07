@@ -1,7 +1,7 @@
 {
   "name": "webserver-2",
   "version": "1.0.0",
-  "description": "",
+  "description": "```\r npm i\r ```",
   "main": "index.js",
   "scripts": {
     "start-dev": "nodemon app.js",
@@ -17,11 +17,20 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "express-validator": "^6.14.2",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.7.1"
+    "express-validator": "^6.14.3",
+    "google-auth-library": "^8.7.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanacc/template_bootcamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/juanacc/template_bootcamp/issues"
+  },
+  "homepage": "https://github.com/juanacc/template_bootcamp#readme"
 }

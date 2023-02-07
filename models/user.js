@@ -1,4 +1,3 @@
-
 const { Schema, model } = require('mongoose');
 
 const UserSchema = Schema({
@@ -11,6 +10,7 @@ const UserSchema = Schema({
         type: String,
         required: [true, 'Password is required'],
     },
+    
     localId: {
         type: String,
         required: false,
@@ -29,7 +29,7 @@ const UserSchema = Schema({
 });
 
 UserSchema.methods.toJSON = function() {
-    const { __v, password, _id, ...user  } = this.toObject();
+    const { __v, password, _id, localId, expireIn, ...user  } = this.toObject();
     user.uid = _id;
     return user;
 }
